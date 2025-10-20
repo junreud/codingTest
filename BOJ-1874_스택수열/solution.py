@@ -1,33 +1,21 @@
-import sys
-from collections import deque
-
-input = sys.stdin.readline
-
-queue = deque()
 n = int(input())
 
-for _ in range(n):
-    command = input().split()
-    
-    if command[0] == "push":
-        queue.append(int(command[1]))
-    elif command[0] == "pop":
-        if queue:
-            print(queue.popleft())
-        else:
-            print(-1)
-    elif command[0] == "size":
-        print(len(queue))
-    elif command[0] == "empty":
-        print(1 if not queue else 0)
-    elif command[0] == "front":
-        if queue:
-            print(queue[0])
-        else:
-            print(-1)
-    elif command[0] == "back":
-        if queue:
-            print(queue[-1])
-        else:
-            print(-1)
+num_list = [int(input()) for _ in range(n)] # [1, 2, 5, 3, 4]
+current = 1 # 6
+stack = [] # 3, 4
+result = [] # +, -, +, -, +, +, +, -
 
+for num in num_list: # 3
+    while num >= current:
+        stack.append(current)
+        result.append("+")
+        current += 1
+    if stack[-1] == num:
+        result.append("-")
+        stack.pop()
+    else:
+        print("NO")
+
+
+for m in result:
+    print(m)
