@@ -53,11 +53,6 @@ field[y][x] = 1  # field[행][열] = field[세로][가로]
 - `N` = 세로 길이 = 행(row) 개수
 - 입력 `(x, y)` → 배열 `[y][x]` (행열 순서 주의!)
 
-### 2. RecursionError 해결
-```python
-import sys
-sys.setrecursionlimit(10000)  # 재귀 깊이 제한 증가
-
 # 또는 스택 기반 DFS 사용 (더 안전)
 def dfs_iterative(field, start_x, start_y, M, N):
     stack = [(start_x, start_y)]
