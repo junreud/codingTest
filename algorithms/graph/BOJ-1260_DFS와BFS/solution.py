@@ -3,12 +3,12 @@ from collections import deque
 
 input = sys.stdin.readline
 
-def dfs(graph, v, visited, result):
+def dfs(graph, start, visited, result):
     """DFS 재귀 구현"""
-    visited[v] = True
-    result.append(v)
-    
-    for neighbor in graph[v]:
+    visited[start] = True
+    result.append(start)
+
+    for neighbor in graph[start]:
         if not visited[neighbor]:
             dfs(graph, neighbor, visited, result)
 

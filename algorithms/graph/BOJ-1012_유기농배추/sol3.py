@@ -38,7 +38,7 @@ for _ in range(T):  # 각 테스트 케이스마다 처리
     for i in range(N):  # N개 행
         for j in range(M):  # M개 열
             if field[i][j] == 1:  # 배추가 있을 때만 DFS 실행
-                dfs_iterative(field, i, j, M, N)
+                dfs_iterative(field, i, j, M, N) # 여기서 i를 행 번호, j를 열 번호로 생각하면 이해하기 쉬움
                 result += 1
     
     print(result)
